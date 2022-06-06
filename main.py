@@ -49,7 +49,7 @@ def actual_price(ticket):
     for index in range(len(x)):
         ax.text(x[index], , size=6)
     plt.show()
-
+  
 
 #btg = wb.DataReader('BPAC11.SA', data_source = 'yahoo', start = '2018-01-01')
 #
