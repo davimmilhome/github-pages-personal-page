@@ -1,1 +1,0 @@
-O propósito desse projeto é 
