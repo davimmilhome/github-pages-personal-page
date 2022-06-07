@@ -1,18 +1,12 @@
 import pandas as pd, pandas_datareader as wb, numpy as np, seaborn as sns, matplotlib.pyplot as plt
 
-ticket_escolhido = input('Escolha um ticket: ')
+ticket_escolhido = input('Escolha um ticket do Yahoo Finance, por exemplo, BPAC11.SA: ')
 
 def actual_price(ticket):
     ticket_df = wb.DataReader(f'{ticket}', data_source = 'yahoo', start = '2018-01-01')
 
-   # ticket_df_close = ticket_df["Close"]
-    #ticket_df_close["Index_date"] = ticket_df.index()
-
-
-
     #Adiciona a coluna date e substitui o index por números inteiros
     ticket_df.reset_index(inplace = True)
-    #ticket_df_close.reset_index(inplace=True)
 
     #Fechamento - Preço e data de fechamento
     v_actual_date = ticket_df["Date"].iloc[-1].strftime('%d/%m/%y')
@@ -40,24 +34,12 @@ def actual_price(ticket):
 
     #plt.plot(df_mean)
     x = ['média_5_anos', 'média_3_anos', 'média_1_ano', 'média_6_meses']
-    fig, ax = plt.subplots(figsize=(6, 6))
     plt.figure(figsize=(6, 6))
     plt.plot(x,list_mean,markersize=12,linestyle='solid')
     plt.xlabel("""Média dos últimos 'x' anos""", size = 8)
     plt.ylabel("Preço Médio", size = 8)
     plt.title(f'Movimento da média de preço ativo: {ticket}')
-    for index in range(len(x)):
-        ax.text(x[index], , size=6)
     plt.show()
-  
-
-#btg = wb.DataReader('BPAC11.SA', data_source = 'yahoo', start = '2018-01-01')
-#
-# print(btg.columns)
-#
-# btg['High'].plot()
-# #plt.plot(btg['High'])
-# plt.show()
 
 if __name__ == '__main__':
     actual_price(ticket_escolhido)
