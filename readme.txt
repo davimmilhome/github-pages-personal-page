@@ -1,7 +1,6 @@
-#btg = wb.DataReader('BPAC11.SA', data_source = 'yahoo', start = '2018-01-01')
-#
-# print(btg.columns)
-#
-# btg['High'].plot()
-# #plt.plot(btg['High'])
-# plt.show()
+I created this project to improve myself in programmig and i would like to have opportunities
+to star working in area.
+
+The main objetive of this code is enumerate some stock that have certain delimited parameters and,
+after this, allow the use of some tools to analize them individually and help in a call ou a sell
+decision.
