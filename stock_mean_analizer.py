@@ -35,10 +35,12 @@ def actual_price(ticket):
     #plt.plot(df_mean)
     x = ['média_5_anos', 'média_3_anos', 'média_1_ano', 'média_6_meses']
     plt.figure(figsize=(6, 6))
-    plt.plot(x,list_mean,markersize=12,linestyle='solid')
+    plt.plot(x,list_mean,markersize=12,linestyle='solid', marker = ',')
     plt.xlabel("""Média dos últimos 'x' anos""", size = 8)
     plt.ylabel("Preço Médio", size = 8)
     plt.title(f'Movimento da média de preço ativo: {ticket}')
+    for a, b in zip(x, list_mean):
+        plt.text(a, b, str(b))
     plt.show()
 
 if __name__ == '__main__':
