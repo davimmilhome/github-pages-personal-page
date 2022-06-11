@@ -64,6 +64,11 @@ def actual_price(ticket):
     plt.title(f'Movimento do preço defechamento ajustado ativo: {ticket}')
     plt.show()
 
+    # plt.plot(returns_mena_weekly)
+    df_return.plot.hist(bins=30)
+    plt.title(f'Comportamento da média semanal dos retornos do ativo {ticket}')
+    plt.show()
+
 if __name__ == '__main__':
     actual_price(ticket_escolhido)
 
