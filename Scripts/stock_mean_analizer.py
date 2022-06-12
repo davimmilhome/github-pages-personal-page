@@ -2,8 +2,15 @@
 import pandas as pd, pandas_datareader as wb,numpy as np
 import seaborn as sns, matplotlib.pyplot as plt, matplotlib.dates as mdates
 
+#Importando Ibovespa
+ibov = wb.DataReader('^BVSP', data_source = 'yahoo', start='2018-01-01')
+ibov.rename(columns = {'Adj Close': 'IBOV'}, inplace=True)
+ibov = ibov.drop(ibov.columns[[0,1,2,3,4]],axis=1)
+ibov_return = ibov.pct_change()
+ibov_return_acm=(1+ibov_return).cumprod()
 
-ticket_escolhido = input('Escolha um ticket do Yahoo Finance, por exemplo, BPAC11.SA: ')
+
+
 
 def actual_price(ticket):
     df_ticker = wb.DataReader(f'{ticket}', data_source ='yahoo', start ='2018-01-01')
@@ -16,18 +23,19 @@ def actual_price(ticket):
     v_actual_price = round(df_ticker["Adj Close"].iloc[-1], 2)
 
     #Médias
+    #Média 6 meses
     df_mean_6m = df_ticker["Adj Close"].tail(180)
     v_mean_6m = round(df_mean_6m.mean(), 2)
-
+    #Média 12 meses
     df_mean_12m = df_ticker["Adj Close"].tail(360)
     v_mean_12m = round(df_mean_12m.mean(), 2)
-
+    #Média 36 meses
     df_mean_36m = df_ticker["Adj Close"].tail(1080)
     v_mean_36m = round(df_mean_36m.mean(), 2)
-
+    #Média 60 meses
     df_mean_60m = df_ticker["Adj Close"].tail(1800)
     v_mean_60m = round(df_mean_60m.mean(), 2)
-
+    #Média definindo DF com a média
     list_mean = [v_mean_60m,v_mean_36m,v_mean_12m,v_mean_6m]
     df_mean = pd.DataFrame(list_mean)
 
@@ -35,8 +43,17 @@ def actual_price(ticket):
     df_return = pd.DataFrame(df_ticker["Adj Close"].pct_change())
     df_return["Date"] = df_ticker["Date"]
     df_return.set_index('Date',inplace=True, drop=True)
+    #tirando a média dos retornos, periodicidade semanal
     mean_return = df_return.resample('W').mean()
 
+    #std proxy volatility
+    #std weekly returns
+    std_ticket = round(float(df_return.std()),4)
+    #std window_mean as a proxy to volatiliy
+    return_meann_std = df_return.rolling(window=30).std()
+
+    #Retorno acumulado
+    return_acm = (1+df_return).cumprod()
 
     #Saída
     print(f'Último fechamento: {v_actual_date,v_actual_price}')
@@ -64,13 +81,30 @@ def actual_price(ticket):
     plt.title(f'Movimento do preço defechamento ajustado ativo: {ticket}')
     plt.show()
 
-    # plt.plot(returns_mena_weekly)
+    # plt.plot(returns_mean_weekly)
     df_return.plot.hist(bins=30)
     plt.title(f'Comportamento da média semanal dos retornos do ativo {ticket}')
     plt.show()
 
+    # plt.plot(return_meann_std)
+    return_meann_std.plot()
+    #df_return.plot.hist(bins=30)
+    plt.title(f'STD da média móvel de 30 dias como proxy para volatilidade do ativo {ticket}, STD dos retornos = {std_ticket} ', fontsize=8)
+    plt.show()
+
+    # plt.plot(return_acm)
+    return_acm.plot()
+    plt.title(f'Retorno acumulado normalizado pelo preço do ativo {ticket}')
+    plt.show()
+    #return_acm contra IBOV
+    df_acm_ag_ibov = pd.merge(ibov_return_acm,return_acm,how='inner',on='Date')
+    df_acm_ag_ibov.plot()
+    plt.title(f'Retorno acumulado normalizado pelo preço do ativo {ticket} X retorno IBOV ',fontsize=8) 
+    plt.show()
+
 if __name__ == '__main__':
-    actual_price(ticket_escolhido)
+    ticker = input('Escolha um ticket do Yahoo Finance, por exemplo, BPAC11.SA: ')
+    actual_price(ticker)
 
 
 
