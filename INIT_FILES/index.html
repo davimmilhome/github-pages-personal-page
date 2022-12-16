@@ -2,26 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <Title>Davi Milhome</Title>
+        <title>Davi Milhome</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-            <img src="imgs/desc1.jpg", alt="Foto de perfil">
-            <h1>Davi Milhome</h1></header>
+            <img id="profile_pic" src="imgs/profilepic.jpg" alt="Foto de perfil" width="10%" height="15%">
+            <ul class="nav justifi-content-cent">
+                <li class="nav-item"><a class="nav-link" href="https://github.com/templateflip" title="Github">
+                    <i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a></li>
+            </ul>
+            
+            <h1 id="title"></h1></header>
         <section>
             <header>
-            <h2>Posts</h2>
+            <h2 class="subtitle">Quem sou eu?</h2>
             </header>
-            <article>
-                <header>
-                    <h3>Post N#1</h3>
-                    <p>
-                        
+            <article class="post">
+                <header>    
+                    <h3 class="post_title">Descrição:
+                    </h3>
+                    <p class="post_content">
+                        Olá! Meu nome é Davi Milhome. Sou formado em economia pela Universidade Federal do Ceará.
+                        Durante a formação ficou claro pra mim que sou um apaixonado por tecnologia e que meu grande
+                        interesse é ser programador. Então, comecei a estudar com o intuito de me transformar em um desenvolver Web começando pelo backend, porém,
+                        com foco em ser um Fullstack.
                     </p>
                 </header>
             </article>
         </section>
-        <footer>Aqui se inicia o footer <br>
+        <footer><br>
             
         Você pode me encontrar em:<br>
         <ul>
