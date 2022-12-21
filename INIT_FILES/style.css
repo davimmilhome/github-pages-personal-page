@@ -4,6 +4,15 @@ color : blue;
 
 body {
     background: white;
+    Max-width: 900PX;
+    margin: auto;
+}
+
+ul {
+    margin: auto;
+    padding: auto;
+    list-style-type: square;
+
 }
 
 .post_title {
