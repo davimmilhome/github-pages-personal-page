@@ -9,6 +9,7 @@ body {
     margin: auto;
     flex-direction: column;
     min-height: 100vh;
+
     /* grid-template-areas:
         "header_section"
         "Site-content_section"
@@ -20,10 +21,39 @@ header {
     dipslay: flex;
 }
 
+footer{
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+span{
+    display:inline-block;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    margin: auto;
+    padding: auto;
+    list-style-type: square;
+}
+
+
 #profile_pic {
-    border: solid green;
-    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
+    margin-top: 50px;
 }
 
 .flex-container{
@@ -44,7 +74,6 @@ header {
     /* border: solid black 3px; */
     padding: 5px;
     display: flex;
-    border: solid black 3px;
 
 }
     
@@ -60,7 +89,7 @@ header {
 .flex-child-2{
     box-sizing: content-box;
     width: 100%;
-    height: 500px;
+    height: auto;
     padding: 5px;
     font-size: 14px;
     overflow: auto;
@@ -69,16 +98,9 @@ header {
 
 }
 
-ul {
-    margin: auto;
-    padding: auto;
-    list-style-type: square;
 
-}
-
-footer{
-    margin-left: 0px;
-    margin-top: auto;
-    background-color: #049e8c;
-
+#title {
+    width:100%;
+    margin-left: 50px;
+    margin-top: 25px;
 }
