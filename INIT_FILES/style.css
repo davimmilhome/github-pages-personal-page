@@ -2,6 +2,10 @@
 color : blue;
 }
 
+/* * {
+    margin: 0;
+} */
+
 body {
     background: white;
     Max-width: 900PX;
@@ -19,6 +23,7 @@ body {
 
 header {
     dipslay: flex;
+    margin-top: 0px;
 }
 
 footer{
@@ -38,6 +43,8 @@ span{
 
 h1 {
     margin: 0;
+    top: -35px;
+    position: relative;
 }
 
 ul {
