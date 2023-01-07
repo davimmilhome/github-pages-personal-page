@@ -1,5 +1,16 @@
+htlm, :root {
+    font-size: 14px;
+}
+
 #title, .subtitle, .post_title {
 color : blue;
+}
+
+#title {
+    font-size: 50px;
+    width:100%;
+    margin-left: 50px;
+    margin-top: 25px;
 }
 
 /* * {
@@ -89,7 +100,7 @@ ul {
     width: 33%;
     height: auto;
     padding: 5px;
-    font-size: 14px;
+
     overflow: auto;
 }
 
@@ -98,7 +109,6 @@ ul {
     width: 100%;
     height: auto;
     padding: 5px;
-    font-size: 14px;
     overflow: auto;
     
 
@@ -106,8 +116,4 @@ ul {
 }
 
 
-#title {
-    width:100%;
-    margin-left: 50px;
-    margin-top: 25px;
-}
+

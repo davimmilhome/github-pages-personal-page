@@ -1,15 +1,13 @@
 <?php
 ini_set('display_errors',0);
 ini_set('log_errors',1);
-echo whoami;
 // Print a greeting if the form was submitted
 if ($_POST['stock']) {
 print "Ação escolhida: ";print $_POST['stock'];
 $stock_name = $_POST['stock'];
 //chmod("/", 777);
-print"\n start opening open";
-$FileHandle = fopen("1.txt", w); print"try to open";
-$FileHandle = fopen("1.txt", w) or die("can't open file");
+print"<br> start opening";
+$FileHandle = fopen("$stock_name .txt", w); print"\n try to open";
 fclose($FileHandle);
 print"\n fim do bloco" ;
 } else {
