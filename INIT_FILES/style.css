@@ -1,9 +1,12 @@
 htlm, :root {
     font-size: 14px;
+    box-sizing: border-box;
+    color: white;
+    background-color: white;
+    margin: 0;
 }
 
 #title, .subtitle, .post_title {
-color : blue;
 }
 
 #title {
@@ -18,8 +21,8 @@ color : blue;
 } */
 
 body {
-    background: white;
-    Max-width: 900PX;
+    background-color: #323335;
+    Max-width: 900px;
     height: 100%;
     margin: auto;
     flex-direction: column;
@@ -97,11 +100,12 @@ ul {
     
 .flex-child{
     box-sizing: content-box;
-    width: 33%;
+    width: 30%;
+    margin: 0 auto;
     height: auto;
     padding: 5px;
-
     overflow: auto;
+
 }
 
 .flex-child-2{
@@ -110,8 +114,6 @@ ul {
     height: auto;
     padding: 5px;
     overflow: auto;
-    
-
 
 }
 
