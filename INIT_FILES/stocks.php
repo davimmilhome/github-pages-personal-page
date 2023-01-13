@@ -1,5 +1,6 @@
 <?php
-ini_set('display_errors',0);
+ini_set('display_errors',1);
+// init_set('display_startup_erros', 1);
 ini_set('log_errors',1);
 // Print a greeting if the form was submitted
 if ($_POST['stock']) {
@@ -14,8 +15,12 @@ print"\n fim do bloco" ;
 // Otherwise, print the form
 print <<<_HTML_
 <form method="post" action="$_SERVER[PHP_SELF]">
-Escolha uma ação da B3: <input type="text" name="stock" />
-<span><button type="submit">confirmar</button></span>
+    <fieldset name="stock-picked">
+     <legend>Escolha uma ação da B3</legend>
+     <input type="text"
+      placeholder="Ex: bbas3">
+     <button type="submit" name="stock-picked"></button>
+    </fieldset>
 </form>
 _HTML_;
 }

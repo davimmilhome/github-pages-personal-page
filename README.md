@@ -1,0 +1,1 @@
+### Esse proejeto tem como intutio me ajudar a estudar a HTML e treinar minhas skills básicas, além disso, pretendo fazer meu currículum dentro desse projeto.
