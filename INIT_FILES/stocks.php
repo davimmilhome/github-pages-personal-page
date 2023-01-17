@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<style> <?php include "__ DIR __./style/style.css"; ?> </style>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style/style.css">
+        <h1>ola</h1>
+    <head>
+</html>
+
+<!-- <?php
+define('style/style.css', 'template/css/'); //define CSS path 
+//define('JS_PATH', 'template/js/'); //define JavaScript path 
+?> -->
+<!-- 
+ -->
 <?php
 ini_set('display_errors',1);
 // init_set('display_startup_erros', 1);
@@ -19,10 +34,11 @@ print <<<_HTML_
      <legend>Escolha uma ação da B3</legend>
      <input type="text"
       placeholder="Ex: bbas3">
-     <button type="submit" name="stock-picked"></button>
+     <button type="submit"  class="button medium-btn" name="stock-picked"></button>
     </fieldset>
 </form>
 _HTML_;
+
 }
 ?>
 
