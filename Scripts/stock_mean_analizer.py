@@ -2,6 +2,9 @@
 import pandas as pd, pandas_datareader as wb,numpy as np
 import seaborn as sns, matplotlib.pyplot as plt, matplotlib.dates as mdates, exceptions as ex
 
+import yfinance as yf
+yf.pdr_override()
+
 #Results Df
 
 l_final_indicators = ['Ticker',
@@ -16,11 +19,11 @@ df_result = pd.DataFrame(columns=l_final_indicators)
 
 
 #Importando Ibovespa
-ibov = wb.DataReader('^BVSP', data_source = 'yahoo', start='2018-01-01')
-ibov.rename(columns = {'Adj Close': 'IBOV'}, inplace=True)
-ibov = ibov.drop(ibov.columns[[0,1,2,3,4]],axis=1)
-ibov_return = ibov.pct_change()
-ibov_return_acm=(1+ibov_return).cumprod()
+#ibov = wb.DataReader('^BVSP', data_source = 'yahoo', start='2018-01-01')
+#ibov.rename(columns = {'Adj Close': 'IBOV'}, inplace=True)
+#ibov = ibov.drop(ibov.columns[[0,1,2,3,4]],axis=1)
+#ibov_return = ibov.pct_change()
+#ibov_return_acm=(1+ibov_return).cumprod()
 
 def analyze_type():
 
@@ -48,8 +51,9 @@ def actual_price():
 
     ticker_chose()
 
-    df_ticker = wb.DataReader(f'{ticker}', data_source ='yahoo', start ='2018-01-01')
-
+    df = wb.get_data_yahoo(f'{ticker}', start ='2018-01-01')
+    #df_ticker = yf.download(f'{ticker}', start ='2018-01-01')
+    #df_ticker = wb.DataReader(f'{ticker}', data_source ='yahoo', start ='2018-01-01')
     #Adiciona a coluna date e substitui o index por números inteiros
     df_ticker.reset_index(inplace = True)
 
