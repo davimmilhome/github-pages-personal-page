@@ -141,6 +141,7 @@ footer {
     border-radius: 50%;
     margin-top: 1em;
     margin-left: 10px;
+    outline: 3px solid green;
 }
 
 #start-page {
