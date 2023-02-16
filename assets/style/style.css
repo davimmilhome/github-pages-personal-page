@@ -25,6 +25,23 @@ body {
     grid-template-rows: auto 100% 50px; */
 }
 
+span{
+    display:inline-block;
+    align-items: center;
+    margin: 0;
+}
+
+ul {
+    margin: auto;
+    padding: auto;
+    list-style-type: square;
+}
+
+footer {
+    font-size: 25px;
+    margin-top: auto;
+}
+
 header {
     position: relative;
     display: flex;
@@ -37,10 +54,12 @@ figure{
     display: flex;
     margin: 0;
     align-items: center;
+    
 }
 
 #profile-pic {
     position: absolute;
+    bottom: 15%;
 
     width: 100px;
     height: 100px;
@@ -55,13 +74,15 @@ figure{
 
 #title {
     position: relative;
-    left: 100%;
+
+    left: 60%;
     font-size: 40px;
     width:100%;
-    bottom: 0;
-    margin-top: auto;
-    
+}
 
+#subtitle {
+    margin-top: 1.5em;
+    width: 15em;
 }
 
 /* .header-child:nth-child(1) {
@@ -80,29 +101,6 @@ figure{
     align-items: bottom;
    
 }
-span{
-    display:inline-block;
-    align-items: center;
-    margin: 0;
-}
-
-h1 {
-    margin: 0;
-    top: -35px;
-    position: relative;
-}
-
-ul {
-    margin: auto;
-    padding: auto;
-    list-style-type: square;
-}
-
-footer {
-    font-size: 25px;
-    margin-top: auto;
-}
-
 
 
 .flex-container{
