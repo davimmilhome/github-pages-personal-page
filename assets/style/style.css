@@ -10,14 +10,6 @@ htlm, :root {
     margin: 0;
 }
 
-
-#title, .subtitle, .post_title {
-}
-
-/* * {
-    margin: 0;
-} */
-
 body {
     background-color: #323335;
     Max-width: 900px;
@@ -34,16 +26,60 @@ body {
 }
 
 header {
-    dipslay: flex;
-    heght: 5%;
+    position: relative;
+    display: flex;
+    height: 125px;
+    align-items: center;
+
 }
 
 figure{
+    display: flex;
     margin: 0;
-    size:
+    align-items: center;
 }
 
+#profile-pic {
+    position: absolute;
 
+    width: 100px;
+    height: 100px;
+    
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 1em;
+    margin-left: 10px;
+
+    outline: 3px solid green;
+}
+
+#title {
+    position: relative;
+    left: 100%;
+    font-size: 40px;
+    width:100%;
+    bottom: 0;
+    margin-top: auto;
+    
+
+}
+
+/* .header-child:nth-child(1) {
+    flex-basis: 1;
+}
+
+.header-child:nth-child(2) {
+    flex-basis: 2;
+} */
+
+
+#btn-menu {
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    align-items: bottom;
+   
+}
 span{
     display:inline-block;
     align-items: center;
@@ -92,7 +128,6 @@ footer {
     width: 30%;
     margin: 0 auto;
     flex-basis: auto;
-    /* height: auto;  */
     padding: 5px;
     overflow: auto;
 
@@ -134,16 +169,7 @@ footer {
     height: 40px;
 }
 
-#profile-pic {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-top: 1em;
-    margin-left: 10px;
-    outline: 3px solid green;
-}
+
 
 #start-page {
     background-image: url(../../imgs/code.jpg);
@@ -151,11 +177,6 @@ footer {
     background-repeat: no-repeat;
 }
 
-#title {
-    font-size: 50px;
-    width:100%;
-    margin-left: 360px;
-    margin-top: 1px;
-}
+
 
 </style>
