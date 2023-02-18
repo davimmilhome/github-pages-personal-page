@@ -7,10 +7,10 @@
         <meta name="description" content="C">
         <title>Davi Milhome</title>
         <link rel="stylesheet" href="assets/style/style.css">
-        <script src="assets/javascript/javascript.js"></script>
+        <!-- <script src="assets/javascript/javascript.js"></script> -->
     </head>
     <body>
-        <header id="start-page">
+        <header  id="menu">
             <figure class="header-child">
                 <img id="profile-pic" src="imgs/profilepic.jpg" alt="Foto de perfil" >
                     <h1 id="title">Davi Martins Milhome
@@ -18,23 +18,22 @@
                         <h2 id="subtitle">Programador Web</h2>
                     </h1>
             </figure>
-         <div class="header-child" id="btn-menu">  
-        <button  name="HOME" onclick="window.location.href='#top'">HOME</button>
-        <button  name="SOBRE" onclick="construction()">SOBRE</button>
-        <button  name="PORTIFÓLIO" onclick="construction()">PORTIFÓLIO</button>
-        <button  name="CONTATO" onclick="construction()">CONTATO</button>
-        </div> 
-
+            <nav class="header-child" id="btn-menu">  
+                <button  id="home" onclick="window.location.href='#top'">HOME</button>
+                <button  id="aboutButton" onclick="construction()">SOBRE</button>
+                <button  id="portfButton" onclick="construction()">PORTIFÓLIO</button>
+                <button  id="contactButton">CONTATO</button>
+            </nav> 
         </header>
-    </head>
-    <div class="flex-container">          
+    <div class="flex-container" id="init-container">          
             <div class="flex-child">
                 <div class = flex-content> 
                 <header>    
                     <h3 class="post_title">Quem sou eu?</h3>
                 </header>
                     <p class="post_content">
-                        Economista formado pela Universidade Federal do Ceará (UFC) em 2022. 
+                        Graduando em Ciências da Computação,
+                        economista formado pela Universidade Federal do Ceará (UFC) em 2022. 
                         Durante a universidade fui bolsista duas vezes, primeiramente do Centro de Gestão Para Resultados (CGPR), um laboratório de avaliação de políticas públicas baseado em dados. 
                         Em seguida, fui bosista do Programa de Educação Tutorial (PET) coordenado pelo MEC, um programa voltado para as áreas de ensino, pesquisa e extensão.
                         <br><br>
@@ -97,14 +96,25 @@
         </div>
     </div>
 
-            <footer id="footer"><br>  
-                Você pode me encontrar em:<br>
-                <ul >
+    <div id="modalContact" class="modal"><br>
+        <div class="modal-content">  
+        Você pode me encontrar em:<br>
+            <ul >
                 <li>Linkedin:<a href="https://www.linkedin.com/in/davi-milhome-151254143/", target="_blank"> linkedin/Davi Milhome</a><br></li>
                 <li>Github: <a href="https://github.com/davimmilhome/", target="_blank">github/Davi Milhome</a></li>
                 <li>Email: <a href="mailto:davimmilhome@gmail.com">davimmilhome@gmail.com</a></li>
-                </ul>
-            </footer> 
+            </ul>
+            <button id="close-button">Fechar</button>
+        </div>
+    </div> 
 
-    
+    <div id="modalConstruct" class="modal"><br>
+        <div class="modal-content">  
+            <p>Desculpe, esse botão ainda está em construção :/</p>
+            <button id="close-button">Fechar</button>
+        </div>
+    </div> 
+
+    <script src="assets/javascript/javascript.js" defer></script>
+    </body>
 </html>
