@@ -13,23 +13,31 @@ function functionClose(self) {
     self.style.display = "none"
 };
 
-/*Botão de fechar*/
-const closeButton = document.getElementById("close-button");
-
 /*Modal construct genérico*/
 const modalConstruct = document.getElementById("modalConstruct")
+
+
 
 
 /*Modal about*/
 const aboutButton = document.getElementById("aboutButton")
 aboutButton.addEventListener("click", functionAppear.bind(null, modalConstruct))
-closeButton.addEventListener("click", functionClose.bind(null, modalConstruct))
+const closeButtonAbout = modalConstruct.querySelector(".close-button")
+closeButtonAbout.addEventListener("click", functionClose.bind(null, modalConstruct))
 
 
 
 /*Modal contato*/
-const contactButton = document.getElementById("contactButton")
 const modalContact = document.getElementById("modalContact")
+const contactButton = document.getElementById("contactButton")
 contactButton.addEventListener("click", functionAppear.bind(null,modalContact))
-closeButton.addEventListener("click", functionClose.bind(null,modalContact))
+const closeButtonContact = modalContact.querySelector(".close-button")
+closeButtonContact.addEventListener("click", functionClose.bind(null,modalContact))
+
+/*Modal portifólio*/
+// const modalPortifolio = document.getElementById(modal)
+const portifolioButton = document.getElementById("portfButton")
+portifolioButton.addEventListener("click", functionAppear.bind(null, modalConstruct))
+const closeButtonPortifolio = modalConstruct.querySelector(".close-button")
+closeButtonPortifolio.addEventListener("click", functionClose.bind(null, modalConstruct))
 
