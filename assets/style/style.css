@@ -1,17 +1,22 @@
-/* <style type="text/css">; */
+:root {
+    /* Colors */
+    --main-bg-color: #fff;
+    --main-text-color: #fff;
+    --main--body-color: #303030;
+    --main-grey-color: #ccc;
 
-/* header("Content-type: text/css; charset: UTF-8");  */
+}
 
-htlm, :root {
+html {
     font-size: 18px;
     box-sizing: border-box;
-    color: white;
-    background-color: white;
+    color: var(--main-bg-color);
+    background-color: var(--main-text-color);
     margin: 0;
 }
 
 body {
-    background-color: #323335;
+    background-color: var(--main--body-color);
     Max-width: 900px;
     height: 100%;
     margin: auto;
